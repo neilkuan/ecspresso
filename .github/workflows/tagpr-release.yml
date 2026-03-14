@@ -27,6 +27,7 @@ jobs:
         run: |
           git checkout v2
           git symbolic-ref --short HEAD
+        if: ${{ github.event_name != 'workflow_dispatch' }}
       - uses: Songmu/tagpr@39bf0bcd1f7ba113b93eb491864ab8df471ad1d6 # v1
         id: tagpr
         env:

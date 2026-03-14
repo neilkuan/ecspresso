@@ -44,10 +44,10 @@ runs:
           api_request_args=("${api_request_args[@]}" -H "authorization: token $github_token")
         fi
         if [ "${VERSION}" = "latest" ]; then
-          DOWNLOAD_URL=$(curl "${api_request_args[@]}" https://api.github.com/repos/kayac/ecspresso/releases \
+          DOWNLOAD_URL=$(curl "${api_request_args[@]}" https://api.github.com/repos/neilkuan/ecspresso/releases \
             | jq --arg matcher "linux.${GOARCH}." -r '[.[]|select(.tag_name > "v2.0")|select(.prerelease==false)][0].assets[].browser_download_url|select(match($matcher))')
         else
-          DOWNLOAD_URL=https://github.com/kayac/ecspresso/releases/download/${VERSION}/ecspresso_${VERSION:1}_linux_${GOARCH}.tar.gz
+          DOWNLOAD_URL=https://github.com/neilkuan/ecspresso/releases/download/${VERSION}/ecspresso_${VERSION:1}_linux_${GOARCH}.tar.gz
         fi
         echo "DOWNLOAD_URL=${DOWNLOAD_URL}"
         mkdir -p ${RUNNER_TOOL_CACHE}/ecspresso
