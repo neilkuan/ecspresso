@@ -1,5 +1,7 @@
 # Changelog
 
+## [v2.8.1](https://github.com/neilkuan/ecspresso/compare/v2.8.0...v2.8.1) - 2026-03-15
+
 ## [v2.7.1](https://github.com/kayac/ecspresso/compare/v2.7.0...v2.7.1) - 2026-02-05
 - add debug logs by @fujiwara in https://github.com/kayac/ecspresso/pull/930
 - fix verify to parse IAM Trust Policy with array format Principal.Service by @fujiwara in https://github.com/kayac/ecspresso/pull/932
